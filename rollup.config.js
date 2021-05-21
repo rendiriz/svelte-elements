@@ -36,15 +36,12 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/button.js'
+		file: 'public/build/avatar.js'
 	},
 	plugins: [
 		svelte({
 			preprocess: sveltePreprocess({
 				sourceMap: !production,
-				scss: {
-					prependData: `@import 'src/styles/variables.scss';`
-				},
 				postcss: {
 					plugins: [
 						require('autoprefixer')
@@ -60,7 +57,7 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		scss({
-			output: 'button.css',
+			output: 'avatar.css',
 			include: ['/**/*.scss']
 		}),
 

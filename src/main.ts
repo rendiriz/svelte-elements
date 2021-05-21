@@ -1,1 +1,1 @@
-import Button from './Button.svelte';
+import Avatar from './Avatar.svelte';
