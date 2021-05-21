@@ -2,6 +2,9 @@
   "name": "svelte-elements",
   "version": "0.0.1",
   "private": true,
+  "main": "public/build/avatar.cjs.js",
+  "module": "public/build/avatar.esm.js",
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

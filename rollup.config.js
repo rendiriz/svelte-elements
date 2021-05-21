@@ -32,12 +32,24 @@ function serve() {
 
 export default {
 	input: 'src/main.ts',
-	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/avatar.js'
-	},
+	output: [
+		{
+			sourcemap: true,
+			format: 'cjs',
+			file: 'public/build/avatar.cjs.js'
+		},
+		{
+			sourcemap: true,
+			format: 'esm',
+			file: 'public/build/avatar.esm.js'
+		},
+		{
+			sourcemap: true,
+			format: 'umd',
+			name: 'svelte-elements',
+			file: 'public/build/avatar.umd.js'
+		}
+	],
 	plugins: [
 		svelte({
 			preprocess: sveltePreprocess({
@@ -72,8 +84,9 @@ export default {
 		}),
 		commonjs(),
 		typescript({
-			sourceMap: !production,
-			inlineSources: !production
+			// sourceMap: !production,
+			// inlineSources: !production,
+			tsconfig: 'tsconfig.json',
 		}),
 
 		// In dev mode, call `npm run start` once
