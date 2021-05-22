@@ -2,7 +2,7 @@
   "name": "svelte-elements",
   "version": "0.0.1",
   "private": true,
-  "main": "public/build/avatar.cjs.js",
+  "main": "public/build/avatar.umd.js",
   "module": "public/build/avatar.esm.js",
   "type": "module",
   "scripts": {
